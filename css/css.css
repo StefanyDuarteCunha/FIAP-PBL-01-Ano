@@ -26,13 +26,14 @@ a, a:visited, a:hover, a:active {
     display: flex;
     justify-content: space-between; /*separa os grupos*/
     align-items: center;
-    padding: 10px 30px 0px 30px;
+    padding: 10px 30px 10px 30px;
 }
 
 .navegacao h2 {
     font-family: "Quicksand", sans-serif;
     font-size: 15px;
     font-weight: bold;
+    margin: auto;
 }
 
 .esquerda, .direita {
@@ -42,20 +43,72 @@ a, a:visited, a:hover, a:active {
     color:#382e16;
 }
 
-.direita h2 {
+.menu {
     border-radius: 40px;
     padding: 10px 20px;
     background-color: #29461367;
+    border: none;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
 }
 
-.direita h2:hover, .esquerda h2:hover {
+.menu:hover, .esquerda h2:hover {
     background-color: #236622;
     color: white;
 }
 
 .conteudo {
-    min-height: calc(100vh - 205px); /* ajuste conforme a altura do seu footer */
+    min-height: calc(100vh - 200px); /* ajuste conforme a altura do seu footer */
     margin: 0px 10px;
+}
+
+.caixa {
+    margin: 30px 50px;
+    padding: 40px;
+    border-radius: 100px;
+    background-color: rgba(239, 226, 226, 0.4);
+}
+
+.texto {
+    align-items: center;
+    display: block;
+    margin: auto; 
+}
+
+.texto h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+}
+
+.texto p {
+    text-align: justify;
+    font-size: 20px;
+}
+
+iframe {
+    border-radius: 0px 100px 100px 0px;
+}
+
+.container_botao {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.botao {
+    margin-top: 20px;
+    border-radius: 40px;
+    padding: 10px 20px;
+    background-color: #29461367;
+    border: none;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+}
+
+.botao:hover {
+    background-color: #236622;
+    color: white;
 }
 
 footer {
