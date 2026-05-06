@@ -87,8 +87,12 @@ a, a:visited, a:hover, a:active {
     font-size: 20px;
 }
 
-iframe {
+.imgdireita {
     border-radius: 0px 100px 100px 0px;
+}
+
+.imgesquerda {
+    border-radius: 100px 0px 0px 100px;
 }
 
 .container_botao {
