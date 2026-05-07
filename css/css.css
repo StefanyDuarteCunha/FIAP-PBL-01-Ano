@@ -52,9 +52,14 @@ a, a:visited, a:hover, a:active {
     font-weight: bold;
 }
 
-.menu:hover, .esquerda h2:hover {
+.menu:hover {
     background-color: #236622;
     color: white;
+}
+
+.esquerda h2:hover {
+    text-decoration: underline;
+    color: #a96238;
 }
 
 .conteudo {
@@ -131,3 +136,31 @@ footer p {
     font-size: 25px;
     margin: 0px 10px;;
 }
+
+.my_forms {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.text_fale {
+    font-weight: bold;
+    justify-content: center;
+    font-size: 30px;
+    border-right: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.fale {
+    color:#236622;
+}
+
+.conosco {
+    color:#a96238;
+}
+
+.text_explicacao {
+    font-size: 20px;
+    padding: 10px 20px;
+    justify-content: center;
+}
+
