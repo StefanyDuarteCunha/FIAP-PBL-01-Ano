@@ -1,11 +1,11 @@
-body {
+body { /*configura o conteúdo como um todo*/
     background-color: #bece94;
     margin: 0;
     display: flex;
     flex-direction: column;
 }
 
-.logo img {
+.logo img { /*configura a imagem que aparece no topo das páginas*/
     padding-top: 10px;
     width: 10%;
     height: auto;
@@ -14,12 +14,7 @@ body {
     margin: auto;
 }
 
-a, a:visited, a:hover, a:active {
-    text-decoration: none; /*tira o sublinhado*/
-    color: inherit;        /*usa a cor do elemento pai*/
-}
-
-.navegacao {
+.navegacao { /*configura o menu de navegação*/
     font-family: "Quicksand", sans-serif;
     font-weight: bold;
     background-color: rgba(255, 255, 255, 0.4);
@@ -29,21 +24,21 @@ a, a:visited, a:hover, a:active {
     padding: 10px 30px 10px 30px;
 }
 
-.navegacao h2 {
+.navegacao h2 { /*configura o texto do menu de navegação*/
     font-family: "Quicksand", sans-serif;
     font-size: 15px;
     font-weight: bold;
     margin: auto;
 }
 
-.esquerda, .direita {
+.esquerda, .direita { /*configura os lados do menu de navegação*/
     display: flex;
     flex-direction: row;
     gap: 30px; /*controla o quão juntinhos eles ficam*/
     color:#382e16;
 }
 
-.menu {
+.menu { /*configura os botões do menu de navegação*/
     border-radius: 40px;
     padding: 10px 20px;
     background-color: #29461367;
@@ -52,60 +47,32 @@ a, a:visited, a:hover, a:active {
     font-weight: bold;
 }
 
-.menu:hover {
+.menu:hover { /*configura os botões do menu de navegação quando passa o mouse*/
     background-color: #236622;
     color: white;
 }
 
-.esquerda h2:hover {
+.esquerda h2:hover { /*configura os textos do menu de navegação quando passa o mouse*/
     text-decoration: underline;
     color: #a96238;
 }
 
-.conteudo {
+a, a:visited, a:hover, a:active { /*configura os links do menu de navegação, para evitar configuração estranha*/
+    text-decoration: none; /*tira o sublinhado*/
+    color: inherit;        /*usa a cor do elemento pai*/
+}
+
+.conteudo { /*configura o conteúdo entre o menu de navegação e o rodapé*/
     min-height: calc(100vh - 200px); /* ajuste conforme a altura do seu footer */
     margin: 0px 10px;
 }
 
-.caixa {
-    margin: 30px 50px;
-    padding: 40px;
-    border-radius: 100px;
-    background-color: rgba(239, 226, 226, 0.4);
-}
-
-.texto {
-    align-items: center;
-    display: block;
-    margin: auto; 
-}
-
-.texto h3 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-weight: bold;
-    font-family: "Quicksand", sans-serif;
-}
-
-.texto p {
-    text-align: justify;
-    font-size: 20px;
-}
-
-.imgdireita {
-    border-radius: 0px 100px 100px 0px;
-}
-
-.imgesquerda {
-    border-radius: 100px 0px 0px 100px;
-}
-
-.container_botao {
+.container_botao { /*configura os botões da página*/
     display: flex;
     justify-content: flex-end;
 }
 
-.botao {
+.botao { /*configura os botões da página*/
     margin-top: 20px;
     border-radius: 40px;
     padding: 10px 20px;
@@ -115,12 +82,12 @@ a, a:visited, a:hover, a:active {
     font-weight: bold;
 }
 
-.botao:hover {
+.botao:hover { /*configura os botões da página quando passa o mouse*/
     background-color: #236622;
     color: white;
 }
 
-footer {
+footer { /*configura o rodapé*/
     padding: 10px 0px;
     font-family: "Quicksand", sans-serif;
     background-color: rgba(255, 255, 255, 0.4);
@@ -128,39 +95,119 @@ footer {
     gap: 15px;
 }
 
-footer p {
+footer p { /*configura o texto do rodapé*/
     font-size: 15px;
 }
 
-.bi {
+.icon-rodape { /*configura os icones do rodapé*/
     font-size: 25px;
-    margin: 0px 10px;;
+    margin: 0px 10px;
 }
 
-.my_forms {
+
+/* ------------------------------------ página INDEX ------------------------------------ */
+.caixa { /*configura as caixas de conteúdo no index*/
+    margin: 30px 50px;
+    padding: 40px;
+    border-radius: 100px;
+    background-color: rgba(239, 226, 226, 0.4);
+}
+
+.texto { /*configura os textos dentro das caixas de conteúdo no index*/
+    align-items: center;
+    display: block;
+    margin: auto; 
+}
+
+.texto h3 { /*configura os títulos dentro das caixas de conteúdo no index*/
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+}
+
+.texto p { /*configura os parágrafos dentro das caixas de conteúdo no index*/
+    text-align: justify;
+    font-size: 20px;
+}
+
+.imgdireita { /*configura as imagens à direita no index*/
+    border-radius: 0px 100px 100px 0px;
+}
+
+.imgesquerda { /*configura as imagens à esquerda no index*/
+    border-radius: 100px 0px 0px 100px;
+}
+
+
+/* ------------------------------------ página FALE CONOSCO ------------------------------------ */
+.my_forms { /*configura o formulário*/
     margin: auto;
     display: flex;
     justify-content: center;
 }
 
-.text_fale {
+.text_fale { /*configura o titulo da página, que apresenta duas palavras com cores diferentes*/
     font-weight: bold;
     justify-content: center;
     font-size: 30px;
     border-right: 2px solid rgba(255, 255, 255, 0.4);
 }
 
-.fale {
+.fale { /*configura apenas a palavra fale no título*/
     color:#236622;
 }
 
-.conosco {
+.conosco { /*configura apenas a palavra conosco no título*/
     color:#a96238;
 }
 
-.text_explicacao {
+.text_explicacao { /*configura o parágrafo de apresentação da página*/
     font-size: 20px;
     padding: 10px 20px;
     justify-content: center;
 }
+
+.titulo-label { /*configura os títulos dos campos de entrada de informação*/
+    font-weight: bold;
+}
+
+.texto-icon { /*configura os textos da caixa de e-mail e telefone, para apresentar junto ao ícone*/
+    display: inline-block;
+}
+
+.redes-fale-conosco { /*configura os ícones da caixa de redes sociais do fale conosco*/
+    font-size: 50px;
+    padding: 30px;
+}
+
+.caixa-contatos { /*configura o container onde está as redes socias do fale conosco*/
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding: 20px;
+    display: block;
+    text-align: center;
+}
+
+.intervalo-entre-campos{ /*configura o intervalo entre os telefones*/
+    padding-right: 40px;
+}
+
+.fale-atendente { /*configura um espaço entre os ícones e o texto que os acompanha*/
+    padding-right: 10px;
+}
+
+
+/* ------------------------------------ página LOGIN ------------------------------------ */
+
+
+/* ------------------------------------ página DASHBOARD ------------------------------------ */
+
+
+
+/* ------------------------------------ página CADASTRO ------------------------------------ */
+
+
 

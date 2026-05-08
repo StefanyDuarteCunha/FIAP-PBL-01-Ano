@@ -39,19 +39,19 @@
 		<form>
 			<div class="my_forms row g-4">
 				<div class="col-md-4">
-					<label for="validationDefault01" class="form-label">Nome Completo</label>
-					<input type="text" class="form-control" id="validationDefault01" required>
+					<label for="validationDefault01" class="form-label titulo-label">Nome Completo</label>
+					<input type="text" class="form-control" id="nomecompleto" required>
 				</div>
 				<div class="col-md-4">
-					<label for="exampleFormControlInput1" class="form-label">E-mail</label>
-					<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"
-						required>
+					<label for="exampleFormControlInput1" class="form-label titulo-label">E-mail</label>
+					<input type="email" class="form-control" id="email" placeholder="name@example.com"
+						required pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$">
 				</div>
 			</div>
 			<div class="my_forms row g-4">
 				<div class="col-md-4">
-					<label for="Telefone" class="form-label">Número de Celular</label>
-					<input type="tel" class="form-control" id="Telefone" placeholder="(99) 99999-9999" maxlength="15" required>
+					<label for="Telefone" class="form-label titulo-label">Número de Celular</label>
+					<input type="tel" class="form-control" id="telefone" placeholder="(99) 99999-9999" maxlength="15" required pattern="^\(\d{2}\)\s\d{4,5}-\d{4}$">
 					<script>document.getElementById('Telefone').addEventListener('input', function (e) {
 							let value = e.target.value.replace(/\D/g, '');
 							value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
@@ -61,7 +61,7 @@
 					</script>
 				</div>
 				<div class="col-md-4">
-					<p>Telefone é o mesmo para Whatsapp e ligação?</p>
+					<p class="titulo-label">Telefone é o mesmo para Whatsapp e ligação?</p>
 					<div class="form-check form-check-inline">
 						<input class="form-check-input" type="radio" name="Telefone" id="inlineRadio1" value="Sim" required>
 						<label class="form-check-label" for="inlineRadio1">Sim</label>
@@ -74,7 +74,7 @@
 			</div>
 			<div class="my_forms row g-4">
 				<div class="col-md-8">
-					<p>Você já possui cadastro?</p>
+					<p class="titulo-label">Você já possui cadastro?</p>
 					<div class="form-check form-check-inline">
 						<input class="form-check-input" type="radio" name="Cadastro" id="inlineRadio1" value="Responsável" required>
 						<label class="form-check-label" for="inlineRadio1">Responsável por uma horta</label>
@@ -95,7 +95,40 @@
 			</div>
 			<div class="my_forms row g-4">
 				<div class="col-md-8">
-					<label for="exampleFormControlTextarea1" class="form-label">Mensagem</label>
+					<p class="titulo-label">Qual o assunto da mensagem?</p>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="Assunto" id="inlineRadio1" value="Reclamação" required>
+						<label class="form-check-label" for="inlineRadio1">Reclamação</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="Assunto" id="inlineRadio2" value="Dúvida" required>
+						<label class="form-check-label" for="inlineRadio2">Dúvida</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="Assunto" id="inlineRadio3" value="Sugestão" required>
+						<label class="form-check-label" for="inlineRadio3">Sugestão</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="Assunto" id="inlineRadio4" value="Dica" required>
+						<label class="form-check-label" for="inlineRadio4">Dica</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="Assunto" id="inlineRadio4" value="Elogio" required>
+						<label class="form-check-label" for="inlineRadio4">Elogio</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="Assunto" id="inlineRadio4" value="Denúncia" required>
+						<label class="form-check-label" for="inlineRadio4">Denúncia</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="Assunto" id="inlineRadio4" value="Outros" required>
+						<label class="form-check-label" for="inlineRadio4">Outros</label>
+					</div>
+				</div>
+			</div>
+			<div class="my_forms row g-4">
+				<div class="col-md-8">
+					<label for="exampleFormControlTextarea1" class="form-label titulo-label">Mensagem</label>
 					<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
 				</div>
 			</div>
@@ -105,15 +138,33 @@
 				</div>
 			</div>
 		</form>
+		<div class="row g-2">
+			<div class="caixa-contatos col-md-5">
+				<p class="titulo-label">Prefere mandar um e-mail ou conversa com um atendente?</p>
+				<a href="https://wa.me/5531985085780" target="_blank"><i class="bi bi-whatsapp fale-atendente"></i></a>
+				<p class="texto-icon intervalo-entre-campos">+55 31 98508-5780</p>
+				<a href="tel:+5531985085780" target="_blank"><i class="bi bi-telephone fale-atendente"></i></a>
+				<p class="texto-icon">+55 31 98508-5780</p><br>
+				<a href="mailto:hortamapsolucao@gmail.com" target="_blank"><i class="bi bi-envelope fale-atendente"></i></a>
+				<p class="texto-icon">hortamapsolucao@gmail.com</p>
+			</div>
+			<div class="caixa-contatos col-md-5">
+				<p class="titulo-label">Você também pode acessar nossas redes sociais:</p>
+				<a href="https://www.instagram.com/hortamap/" target="_blank"><i class="bi bi-instagram redes-fale-conosco"></i></a>
+				<a href="https://www.linkedin.com" target="_blank"><i class="bi bi-linkedin redes-fale-conosco"></i></a>
+				<a href="https://www.youtube.com/@HortaMapSolucao" target="_blank"><i class="bi bi-youtube redes-fale-conosco"></i></a>
+				<a href="https://www.tiktok.com" target="_blank"><i class="bi bi-tiktok redes-fale-conosco"></i></a>
+			</div>
+		</div>
 	</div>
 	<footer>
 		<p>© 2026 Hortamap  |  Todos contra a fome</p>
-		<a href="https://www.instagram.com/hortamap/" target="_blank"><i class="bi bi-instagram"></i></a>
-		<a href="https://www.linkedin.com" target="_blank"><i class="bi bi-linkedin"></i></a>
-		<a href="https://www.youtube.com/@HortaMapSolucao" target="_blank"><i class="bi bi-youtube"></i></a>
-		<a href="https://www.tiktok.com" target="_blank"><i class="bi bi-tiktok"></i></a>
-		<a href="https://wa.me/5531985085780" target="_blank"><i class="bi bi-whatsapp"></i></a>
-		<a href="mailto:hortamapsolucao@gmail.com" target="_blank"><i class="bi bi-envelope"></i></a>
+		<a href="https://www.instagram.com/hortamap/" target="_blank"><i class="bi bi-instagram icon-rodape"></i></a>
+		<a href="https://www.linkedin.com" target="_blank"><i class="bi bi-linkedin icon-rodape"></i></a>
+		<a href="https://www.youtube.com/@HortaMapSolucao" target="_blank"><i class="bi bi-youtube icon-rodape"></i></a>
+		<a href="https://www.tiktok.com" target="_blank"><i class="bi bi-tiktok icon-rodape"></i></a>
+		<a href="https://wa.me/5531985085780" target="_blank"><i class="bi bi-whatsapp icon-rodape"></i></a>
+		<a href="mailto:hortamapsolucao@gmail.com" target="_blank"><i class="bi bi-envelope icon-rodape"></i></a>
 	</footer>
 </body>
 </html>
