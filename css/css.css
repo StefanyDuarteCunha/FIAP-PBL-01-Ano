@@ -64,7 +64,6 @@ a, a:visited, a:hover, a:active { /*configura os links do menu de navegação, p
 
 .conteudo { /*configura o conteúdo entre o menu de navegação e o rodapé*/
     min-height: calc(100vh - 200px); /* ajuste conforme a altura do seu footer */
-    margin: 0px 10px;
 }
 
 .container_botao { /*configura os botões da página*/
@@ -128,7 +127,14 @@ footer p { /*configura o texto do rodapé*/
 
 .texto p { /*configura os parágrafos dentro das caixas de conteúdo no index*/
     text-align: justify;
-    font-size: 20px;
+    font-size: 18px;
+}
+
+.imgdireita, .imgesquerda { /*configura as imagens no index*/
+    max-width: 100%; /* Não ultrapassa o tamanho do contêiner */
+    height: auto;    /* Mantém a proporção original */
+    object-fit: cover;   /* Preenche sem distorcer, cortando se necessário */
+    object-position: center; /* Centraliza a imagem */
 }
 
 .imgdireita { /*configura as imagens à direita no index*/
@@ -138,7 +144,6 @@ footer p { /*configura o texto do rodapé*/
 .imgesquerda { /*configura as imagens à esquerda no index*/
     border-radius: 100px 0px 0px 100px;
 }
-
 
 /* ------------------------------------ página FALE CONOSCO ------------------------------------ */
 .my_forms { /*configura o formulário*/
@@ -163,7 +168,7 @@ footer p { /*configura o texto do rodapé*/
 }
 
 .text_explicacao { /*configura o parágrafo de apresentação da página*/
-    font-size: 20px;
+    font-size: 16px;
     padding: 10px 20px;
     justify-content: center;
 }
@@ -201,7 +206,32 @@ footer p { /*configura o texto do rodapé*/
 
 
 /* ------------------------------------ página LOGIN ------------------------------------ */
+.login_page, .frase-impacto, .forms-login {
+    margin: auto;
+    padding: 50px;
+}
+.frase-impacto {
+    justify-content: center;
+}
 
+.container_login { /*configura os botões da página*/
+    display: inline; 
+}
+
+h1 {
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+.senha {
+    margin-top: 10px;
+}
+
+.forms-login {
+    border-left: 5px solid #236622;
+}
 
 /* ------------------------------------ página DASHBOARD ------------------------------------ */
 
