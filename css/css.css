@@ -238,6 +238,58 @@ h1 {
 
 
 /* ------------------------------------ página CADASTRO ------------------------------------ */
+.tipo_cadastro { /*configura os botões de tipo de cadastro*/
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px; /*controla o quão juntinhos eles ficam*/
+    align-items: center;
+    padding: 10px 30px 10px 30px;
+}
 
+.cadastro_button { /*configura os botões de cadastro*/
+    border-radius: 40px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: none;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    color: #236622;
+}
 
+.cadastro_button:hover { /*configura os botões do menu de navegação quando passa o mouse*/
+    background-color: #236622;
+    color: white;
+}
 
+.cadastro_button.active { /*configura os botões do menu de navegação quando passa o mouse*/
+    background-color: #23662268;
+    color: black;
+}
+
+.secao_cadastro {
+    margin-top: 20px;
+    padding-bottom: 30px;
+    border-bottom: 2px dashed #23662245;
+}
+
+.identificacao_secao {
+    font-family: "Quicksand", sans-serif;
+    font-size: 15px;
+}
+
+.forms_cadastro {
+    margin-bottom: 30px;
+}
+
+.produto-item .form-check-label {
+    width: 110px; /* largura fixa para alinhar os nomes */
+}
+
+.produto-item .area-input {
+    width: 100px; /* já está no seu padrão */
+}
+
+.produto-item .form-check-input {
+    margin-top: 0; /* alinha verticalmente */
+}

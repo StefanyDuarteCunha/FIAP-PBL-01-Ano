@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,25 +14,769 @@
 	<title>Cadastro</title>
 	<link rel="icon" type="image/png" href="img/logo_HortaMap_folha.png">
 </head>
+
 <body>
 	<div class="logo">
 		<img src="img/logo_HortaMap_horizontal.png">
 	</div>
 	<div class="navegacao">
-  		<div class="esquerda">
-    		<h2><a href="index.html" target="_parent">Conheça a solução</a></h2>
-    		<h2><a href="fale_conosco.html" target="_parent">Fale conosco</a></h2>
+		<div class="esquerda">
+			<h2><a href="index.html" target="_parent">Conheça a solução</a></h2>
+			<h2><a href="fale_conosco.html" target="_parent">Fale conosco</a></h2>
 		</div>
 		<div class="direita">
 			<button type="button" class="menu"><a href="login.html" target="_parent">Login</a></button>
-			<button type="button" class="menu"><a href="cadastro.html" target="_parent">Experimente a Solução</a></button>
+			<button type="button" class="menu"><a href="cadastro.html" target="_parent">Experimente a
+					Solução</a></button>
 		</div>
 	</div>
 	<div class="conteudo">
-		<p>Teste Cadastro</p>
+		<div class="my_forms row g-4">
+			<div class="text_fale col-md-3 d-flex align-items-center">
+				<p><span class="fale">Cadastre-se</span> <span class="conosco">aqui</span></p>
+			</div>
+			<div class="text_explicacao col-md-7 d-flex align-items-center">
+				<p>Cadastre-se e faça parte da plataforma que conecta dados, pessoas e alimentos para um mundo mais sustentável.<br>
+					Para começar, selecione o tipo de cadastro que você deseja.
+				</p>
+			</div>
+		</div>
+		<form class="forms_cadastro ms-5 me-5">
+			<div class="tipo_cadastro g-4">
+				<button type="button" class="cadastro_button" id="btnResponsavel">Gestor da horta</button>
+				<button type="button" class="cadastro_button" id="btnVoluntario">Voluntário</button>
+				<button type="button" class="cadastro_button" id="btnComunidade">Comunidade</button>
+				<script>
+					const botoes = document.querySelectorAll('.cadastro_button');
+					botoes.forEach(btn => {
+						btn.addEventListener('click', () => {
+							botoes.forEach(b => b.classList.remove('active'));
+							btn.classList.add('active');
+						});
+					});				
+				</script>
+			</div>
+			<div class="secao_cadastro" id="dados_pessoais" style="display:none;">
+				<p class="identificacao_secao mb-0"><em>Dados pessoais:</em></p>
+				<div class="my_forms row g-4">
+					<div class="col-md-4">
+						<label for="validationDefault01" class="form-label titulo-label">Nome Completo</label>
+						<input type="text" class="form-control" id="nomecompleto" required>
+					</div>
+					<div class="col-md-4">
+						<label for="validationDefault01" class="form-label titulo-label">CPF</label>
+						<input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" required pattern="^\d{3}\.\d{3}\.\d{3}\-\d{2}$">
+						<script>
+							document.getElementById('cpf').addEventListener('input', function () {
+								let v = this.value.replace(/\D/g, ''); // remove tudo que não é número
+								v = v.slice(0, 11); //impede digitar mais que 11 dígitos
+								if (v.length > 3) v = v.replace(/(\d{3})(\d)/, '$1.$2');
+								if (v.length > 6) v = v.replace(/(\d{3})(\d)/, '$1.$2');
+								if (v.length > 9) v = v.replace(/(\d{3})(\d{2})$/, '$1-$2');
+								this.value = v;
+							});
+						</script>
+					</div>
+					<div class="col-md-4">
+						<label for="validationDefault01" class="form-label titulo-label">Data de Nascimento</label>
+						<input type="date" class="form-control" id="datanascimento" required>
+					</div>
+				</div>
+				<div class="my_forms row g-4">
+					<div class="col-md-4">
+						<label for="exampleFormControlInput1" class="form-label titulo-label">E-mail</label>
+						<input type="email" class="form-control" id="email" placeholder="name@example.com" required 							pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$">
+					</div>
+					<div class="col-md-4">
+						<label for="Telefone" class="form-label titulo-label">Número de Celular</label>
+						<input type="tel" class="form-control" id="telefone" placeholder="(99) 99999-9999"
+							maxlength="15" required pattern="^\(\d{2}\)\s\d{4,5}-\d{4}$">
+						<script>
+							document.getElementById('telefone').addEventListener('input', function (e) {
+								let value = e.target.value.replace(/\D/g, '');
+								value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+								value = value.replace(/(\d{5})(\d)/, '$1-$2');
+								e.target.value = value;
+							});
+						</script>
+					</div>
+					<div class="col-md-4">
+						<p class="titulo-label">Telefone é o mesmo para Whatsapp e ligação?</p>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="Telefone" id="inlineRadio1" value="Sim"
+								required>
+							<label class="form-check-label" for="inlineRadio1">Sim</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="Telefone" id="inlineRadio2" value="Não"
+								required>
+							<label class="form-check-label" for="inlineRadio2">Não</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="dados_representante_horta" style="display:none;">
+				<div class="secao_cadastro">
+					<p class="identificacao_secao mb-0"><em>Dados da horta:</em></p>
+					<div class="my_forms row g-4">
+						<div class="col-md-3">
+							<label for="validationDefault01" class="form-label titulo-label">Nome da horta</label>
+							<input type="text" class="form-control" id="nomehorta" required>
+						</div>
+						<div class="col-md-3">
+							<p class="titulo-label">Tipo da horta</p>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="tipohorta" id="inlineRadio1"
+									value="Sim" required>
+								<label class="form-check-label" for="inlineRadio1">Comunitária</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="tipohorta" id="inlineRadio2"
+									value="Não" required>
+								<label class="form-check-label" for="inlineRadio2">Privada</label>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label for="validationDefault01" class="form-label titulo-label">Tamanho da horta
+								(m²)</label>
+							<input type="number" class="form-control" id="tamanhohorta" required>
+						</div>
+						<div class="col-md-3">
+							<label for="validationDefault01" class="form-label titulo-label">CEP</label>
+							<input type="text" class="form-control" id="cep" placeholder="00000-000" minlength="9" maxlength="9" required pattern="^\d{5}\-\d{3}$">
+							<script>
+								document.getElementById('cep').addEventListener('input', function () {
+									let v = this.value.replace(/\D/g, ''); // remove tudo que não é número
+									if (v.length > 5) v = v.replace(/(\d{5})(\d)/, '$1-$2');
+									this.value = v;
+								});
+							</script>
+						</div>
+					</div>
+					<div class="my_forms row g-4">
+						<div class="col-md-3">
+							<label for="validationDefault01" class="form-label titulo-label">Logradouro</label>
+							<input type="text" class="form-control" id="enderecohorta" required>
+						</div>
+						<div class="col-md-1">
+							<label for="validationDefault01" class="form-label titulo-label">Número</label>
+							<input type="text" class="form-control" id="numerohorta" required>
+						</div>
+						<div class="col-md-2">
+							<label for="validationDefault01" class="form-label titulo-label">Complemento</label>
+							<input type="text" class="form-control" id="complementohorta">
+						</div>
+						<div class="col-md-2">
+							<label for="validationDefault01" class="form-label titulo-label">Bairro</label>
+							<input type="text" class="form-control" id="bairrohorta" required>
+						</div>
+						<div class="col-md-2">
+							<label for="validationDefault01" class="form-label titulo-label">Cidade</label>
+							<input type="text" class="form-control" id="cidadehorta" required>
+						</div>
+						<div class="col-md-2">
+							<label for="validationDefault01" class="form-label titulo-label">Estado</label>
+							<input type="text" class="form-control" id="estadohorta" required>
+						</div>
+					</div>
+				</div>
+				<div class="secao_cadastro">
+					<p class="identificacao_secao mb-0"><em>Dados da produção:</em></p>
+					<p class="titulo-label mb-4">A seguir, selecione os cultivos que a horta possui, e informe a área de
+						cultivo (em
+						m²):</p>
+					<div class="produtoshorta">
+						<div class="row g-4">
+							<p class="identificacao_secao mb-0"><u><i>Folhas e Verduras:</i></u></p>
+							<!-- Agrião -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="agriao">
+									<label for="agriao" class="form-check-label">Agrião</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Alecrim -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="alecrim">
+									<label for="alecrim" class="form-check-label">Alecrim</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Alface -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="alface">
+									<label for="alface" class="form-check-label">Alface</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Camomila -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="camomila">
+									<label for="camomila" class="form-check-label">Camomila</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Capim-limão -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="capim-limao">
+									<label for="capim-limao" class="form-check-label">Capim-limão</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Cebolinha -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="cebolinha">
+									<label for="cebolinha" class="form-check-label">Cebolinha</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Coentro -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="coentro">
+									<label for="coentro" class="form-check-label">Coentro</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Couve -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="couve">
+									<label for="couve" class="form-check-label">Couve</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Couve-flor -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="couve-flor">
+									<label for="couve-flor" class="form-check-label">Couve-flor</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Erva-doce -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="erva-doce">
+									<label for="erva-doce" class="form-check-label">Erva-doce</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Espinafre -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="espinafre">
+									<label for="espinafre" class="form-check-label">Espinafre</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Hortelã -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="hortela">
+									<label for="hortela" class="form-check-label">Hortelã</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Manjericão -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="manjericao">
+									<label for="manjericao" class="form-check-label">Manjericão</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Mostarda -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="mostarda">
+									<label for="mostarda" class="form-check-label">Mostarda</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Ora-pro-nóbis -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="ora-pro-nobis">
+									<label for="ora-pro-nobis" class="form-check-label">Ora-pro-nóbis</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Rúcula -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="rucula">
+									<label for="rucula" class="form-check-label">Rúcula</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Salsinha -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="salsinha">
+									<label for="salsinha" class="form-check-label">Salsinha</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Taioba -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="taioba">
+									<label for="taioba" class="form-check-label">Taioba</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<div class="col-md-5 produto-item outros-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="outros">
+									<label for="outros" class="form-check-label">Outros</label>
+									<!-- Campo extra para nome do produto -->
+									<input type="text" class="form-control nome-outro" placeholder="Qual produto?"
+										disabled style="width:200px;">
+									<!-- Campo de área -->
+									<input type="number" class="form-control area-input" placeholder="m²" disabled
+										style="width:100px;">
+								</div>
+							</div>
+						</div>
+						<div class="row g-4 mt-2">
+							<p class="identificacao_secao mb-0"><u><i>Legumes e Raízes:</i></u></p>
+							<!-- Abobrinha -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="abobrinha">
+									<label for="abobrinha" class="form-check-label">Abobrinha</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Alho -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="alho">
+									<label for="alho" class="form-check-label">Alho</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Alho-poró -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="alho-poro">
+									<label for="alho-poro" class="form-check-label">Alho-poró</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Berinjela -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="berinjela">
+									<label for="berinjela" class="form-check-label">Berinjela</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Beterraba -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="beterraba">
+									<label for="beterraba" class="form-check-label">Beterraba</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Cebola -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="cebola">
+									<label for="cebola" class="form-check-label">Cebola</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Cenoura -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="cenoura">
+									<label for="cenoura" class="form-check-label">Cenoura</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Nabo -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="nabo">
+									<label for="nabo" class="form-check-label">Nabo</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Pepino -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="pepino">
+									<label for="pepino" class="form-check-label">Pepino</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Pimentão -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="pimentao">
+									<label for="pimentao" class="form-check-label">Pimentão</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Rabanete -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="rabanete">
+									<label for="rabanete" class="form-check-label">Rabanete</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Tomate -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="tomate">
+									<label for="tomate" class="form-check-label">Tomate</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<div class="col-md-5 produto-item outros-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="outros">
+									<label for="outros" class="form-check-label">Outros</label>
+									<!-- Campo extra para nome do produto -->
+									<input type="text" class="form-control nome-outro" placeholder="Qual produto?"
+										disabled style="width:200px;">
+									<!-- Campo de área -->
+									<input type="number" class="form-control area-input" placeholder="m²" disabled
+										style="width:100px;">
+								</div>
+							</div>
+						</div>
+						<div class="row g-4 mt-2">
+							<p class="identificacao_secao mb-0"><u><i>Grãos, Sementes e Leguminosas:</i></u></p>
+							<!-- Ervilha -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="ervilha">
+									<label for="ervilha" class="form-check-label">Ervilha</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Feijão -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="feijao">
+									<label for="feijao" class="form-check-label">Feijão</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Grão-de-bico -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="grao-de-bico">
+									<label for="grao-de-bico" class="form-check-label">Grão-de-bico</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Milho -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="milho">
+									<label for="milho" class="form-check-label">Milho</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<div class="col-md-5 produto-item outros-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="outros">
+									<label for="outros" class="form-check-label">Outros</label>
+									<!-- Campo extra para nome do produto -->
+									<input type="text" class="form-control nome-outro" placeholder="Qual produto?"
+										disabled style="width:200px;">
+									<!-- Campo de área -->
+									<input type="number" class="form-control area-input" placeholder="m²" disabled
+										style="width:100px;">
+								</div>
+							</div>
+						</div>
+						<div class="row g-4 mt-2">
+							<p class="identificacao_secao mb-0"><u><i>Frutas:</i></u></p>
+							<!-- Acerola -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="acerola">
+									<label for="acerola" class="form-check-label">Acerola</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Amora -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="amora">
+									<label for="amora" class="form-check-label">Amora</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Framboesa -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="framboesa">
+									<label for="framboesa" class="form-check-label">Framboesa</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Laranja -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="laranja">
+									<label for="laranja" class="form-check-label">Laranja</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Maçã -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="maca">
+									<label for="maca" class="form-check-label">Maçã</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Manga -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="manga">
+									<label for="manga" class="form-check-label">Manga</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Maracujá -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="maracuja">
+									<label for="maracuja" class="form-check-label">Maracujá</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Melancia -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="melancia">
+									<label for="melancia" class="form-check-label">Melancia</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Melão -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="melao">
+									<label for="melao" class="form-check-label">Melão</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Morango -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="morango">
+									<label for="morango" class="form-check-label">Morango</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<!-- Uva -->
+							<div class="col-md-3 produto-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="uva">
+									<label for="uva" class="form-check-label">Uva</label>
+									<input type="number" class="form-control area-input" placeholder="m²" disabled>
+								</div>
+							</div>
+							<div class="col-md-5 produto-item outros-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="outros">
+									<label for="outros" class="form-check-label">Outros</label>
+									<!-- Campo extra para nome do produto -->
+									<input type="text" class="form-control nome-outro" placeholder="Qual produto?"
+										disabled style="width:200px;">
+									<!-- Campo de área -->
+									<input type="number" class="form-control area-input" placeholder="m²" disabled
+										style="width:100px;">
+								</div>
+							</div>
+						</div>
+						<div class="row g-4 mt-2">
+							<p class="identificacao_secao mb-0"><u><i>Outros:</i></u></p>
+							<div class="col-md-5 produto-item outros-item">
+								<div class="d-flex align-items-center gap-2">
+									<input type="checkbox" class="form-check-input produto-check" id="outros">
+									<label for="outros" class="form-check-label">Outros</label>
+									<!-- Campo extra para nome do produto -->
+									<input type="text" class="form-control nome-outro" placeholder="Qual produto?"
+										disabled style="width:200px;">
+									<!-- Campo de área -->
+									<input type="number" class="form-control area-input" placeholder="m²" disabled
+										style="width:100px;">
+								</div>
+							</div>
+						</div>
+						<script>
+							document.querySelectorAll('.produto-item').forEach(item => {
+								const checkbox = item.querySelector('.produto-check');
+								const areaInput = item.querySelector('.area-input');
+								const nomeOutro = item.querySelector('.nome-outro'); // só existe no "Outros"
+								checkbox.addEventListener('change', () => {
+									const ativo = checkbox.checked;
+									// habilita/desabilita campo de área
+									areaInput.disabled = !ativo;
+									if (!ativo) areaInput.value = "";
+									// se for o item "Outros", habilita também o campo de nome
+									if (nomeOutro) {
+										nomeOutro.disabled = !ativo;
+										if (!ativo) nomeOutro.value = "";
+									}
+								});
+							});
+						</script>
+					</div>
+				</div>
+			</div>
+			<div class="secao_cadastro" id="dados_voluntario" style="display:none;">
+				<div class="my_forms row g-4">
+					<div class="col-md-5">
+						<label for="validationDefault01" class="form-label titulo-label">Nome da horta que deseja apoiar</label>
+						<input type="text" class="form-control" id="nomecompleto" required>
+					</div>
+					<div class="col-md-3">
+						<p class="titulo-label">Já fez contato com o responsável?</p>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="contatoresponsavel" id="inlineRadio1" value="Sim"
+								required>
+							<label class="form-check-label" for="inlineRadio1">Sim</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="contatoresponsavel" id="inlineRadio2" value="Não"
+								required>
+							<label class="form-check-label" for="inlineRadio2">Não</label>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<p class="titulo-label">Como deseja apoiar?</p>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="formaapoio" id="inlineRadio1" value="MaoDeObra"
+								required>
+							<label class="form-check-label" for="inlineRadio1">Mão de obra</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="formaapoio" id="inlineRadio2" value="Financeiramente"
+								required>
+							<label class="form-check-label" for="inlineRadio2">Financeiramente</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="formaapoio" id="inlineRadio2" value="Ambos"
+								required>
+							<label class="form-check-label" for="inlineRadio2">Ambos</label>
+						</div>
+					</div>
+				</div>
+				<div class="my_forms row g-4">
+					<p class="identificacao_secao mb-0 mt-5"><em>Se tiver selecionado a opção "Mão de obra", preencha os campos a seguir:</em></p>
+					<div class="col-md-5">
+						<p class="titulo-label">Quais dias possui de disponibilidade para atuar na horta?</p>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="checkbox" name="diaatuacao" id="inlineCheckbox1" value="Dom">
+							<label class="form-check-label" for="inlineCheckbox1">Dom</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="checkbox" name="diaatuacao" id="inlineCheckbox1" value="Seg">
+							<label class="form-check-label" for="inlineCheckbox1">Seg</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="checkbox" name="diaatuacao" id="inlineCheckbox1" value="Ter">
+							<label class="form-check-label" for="inlineCheckbox1">Ter</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="checkbox" name="diaatuacao" id="inlineCheckbox1" value="Qua">
+							<label class="form-check-label" for="inlineCheckbox1">Qua</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="checkbox" name="diaatuacao" id="inlineCheckbox1" value="Qui">
+							<label class="form-check-label" for="inlineCheckbox1">Qui</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="checkbox" name="diaatuacao" id="inlineCheckbox1" value="Sex">
+							<label class="form-check-label" for="inlineCheckbox1">Sex</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="checkbox" name="diaatuacao" id="inlineCheckbox1" value="Sáb">
+							<label class="form-check-label" for="inlineCheckbox1">Sáb</label>
+						</div>
+					</div>
+					<div class="col-md-5">
+						<p class="titulo-label">Quais horários possui de disponibilidade para atuar na horta?</p>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="checkbox" name="horaatuação" id="inlineCheckbox1" value="manha">
+							<label class="form-check-label" for="inlineCheckbox1">Manhã</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="checkbox" name="horaatuação" id="inlineCheckbox1" value="tarde">
+							<label class="form-check-label" for="inlineCheckbox1">Tarde</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="checkbox" name="horaatuação" id="inlineCheckbox1" value="diatodo">
+							<label class="form-check-label" for="inlineCheckbox1">Dia Todo</label>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<p class="titulo-label">Possui experiência?</p>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="Sim" id="inlineRadio1" value="Sim">
+							<label class="form-check-label" for="inlineRadio1">Sim</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="Nao" id="inlineRadio1" value="Nao">
+							<label class="form-check-label" for="inlineRadio1">Não</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="my_forms row g-4" id="botao_envio" style="display:none;">
+				<div class="container_botao col-md-12">
+					<button type="submit" class="botao">Enviar</button>
+				</div>
+			</div>
+		</form>
+		<script>
+			const botao1 = document.getElementById('btnResponsavel');
+			const botao2 = document.getElementById('btnVoluntario');
+			const botao3 = document.getElementById('btnComunidade');
+			const secao1 = document.getElementById('dados_pessoais');
+			const secao2 = document.getElementById('dados_representante_horta');
+			const secao3 = document.getElementById('dados_voluntario');
+			const secao4 = document.getElementById('botao_envio');
+			botao1.addEventListener('click', () => {
+				secao1.style.display = 'block';
+				secao2.style.display = 'block';
+				secao3.style.display = 'none';
+				secao4.style.display = 'block';
+			});
+			botao2.addEventListener('click', () => {
+				secao1.style.display = 'block';
+				secao2.style.display = 'none';
+				secao3.style.display = 'block';
+				secao4.style.display = 'block';
+			});
+			botao3.addEventListener('click', () => {
+				secao1.style.display = 'block';
+				secao2.style.display = 'none';
+				secao3.style.display = 'none';
+				secao4.style.display = 'block';
+			});
+		</script>
 	</div>
 	<footer>
-		<p>© 2026 Hortamap  |  Todos contra a fome</p>
+		<p>© 2026 Hortamap | Todos contra a fome</p>
 		<a href="https://www.instagram.com/hortamap/" target="_blank"><i class="bi bi-instagram icon-rodape"></i></a>
 		<a href="https://www.linkedin.com" target="_blank"><i class="bi bi-linkedin icon-rodape"></i></a>
 		<a href="https://www.youtube.com/@HortaMapSolucao" target="_blank"><i class="bi bi-youtube icon-rodape"></i></a>
