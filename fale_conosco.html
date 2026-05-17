@@ -52,7 +52,8 @@
 				<div class="col-md-4">
 					<label for="Telefone" class="form-label titulo-label">Número de Celular</label>
 					<input type="tel" class="form-control" id="telefone" placeholder="(99) 99999-9999" maxlength="15" required pattern="^\(\d{2}\)\s\d{4,5}-\d{4}$">
-					<script>document.getElementById('Telefone').addEventListener('input', function (e) {
+					<script>
+						document.getElementById('telefone').addEventListener('input', function (e) {
 							let value = e.target.value.replace(/\D/g, '');
 							value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
 							value = value.replace(/(\d{5})(\d)/, '$1-$2');
