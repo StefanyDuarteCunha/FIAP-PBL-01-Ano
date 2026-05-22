@@ -31,23 +31,23 @@
 		</div>
 	</div>
 	<div class="conteudo">
-		<div class="my_forms row g-4">
-			<div class="text_fale col-md-3 d-flex align-items-center">
-				<p><span class="fale">Cadastre-se</span> <span class="conosco">aqui</span></p>
+		<div class="my-forms row g-4">
+			<div class="text-duo-color col-md-3 d-flex align-items-center">
+				<p><span class="color1">Cadastre-se</span> <span class="color2">aqui</span></p>
 			</div>
-			<div class="text_explicacao col-md-7 d-flex align-items-center">
+			<div class="text-explicacao col-md-7 d-flex align-items-center">
 				<p>Cadastre-se e faça parte da plataforma que conecta dados, pessoas e alimentos para um mundo mais sustentável.<br>
 					Para começar, selecione o tipo de cadastro que você deseja.
 				</p>
 			</div>
 		</div>
-		<form class="forms_cadastro ms-5 me-5">
-			<div class="tipo_cadastro g-4">
-				<button type="button" class="cadastro_button" id="btnResponsavel">Gestor da horta</button>
-				<button type="button" class="cadastro_button" id="btnVoluntario">Voluntário</button>
-				<button type="button" class="cadastro_button" id="btnComunidade">Comunidade</button>
+		<form class="forms-cadastro ms-5 me-5">
+			<div class="tipo-cadastro g-4">
+				<button type="button" class="cadastro-button" id="btnResponsavel">Gestor da horta</button>
+				<button type="button" class="cadastro-button" id="btnVoluntario">Voluntário</button>
+				<button type="button" class="cadastro-button" id="btnComunidade">Comunidade</button>
 				<script>
-					const botoes = document.querySelectorAll('.cadastro_button');
+					const botoes = document.querySelectorAll('.cadastro-button');
 					botoes.forEach(btn => {
 						btn.addEventListener('click', () => {
 							botoes.forEach(b => b.classList.remove('active'));
@@ -56,9 +56,9 @@
 					});				
 				</script>
 			</div>
-			<div class="secao_cadastro" id="dados_pessoais" style="display:none;">
-				<p class="identificacao_secao mb-0"><em>Dados pessoais:</em></p>
-				<div class="my_forms row g-4">
+			<div class="secao-cadastro" id="dados_pessoais" style="display:none;">
+				<p class="identificacao-secao mb-0"><em>Dados pessoais:</em></p>
+				<div class="my-forms row g-4">
 					<div class="col-md-4">
 						<label for="validationDefault01" class="form-label titulo-label">Nome Completo</label>
 						<input type="text" class="form-control" id="nomecompleto" required>
@@ -82,7 +82,7 @@
 						<input type="date" class="form-control" id="datanascimento" required>
 					</div>
 				</div>
-				<div class="my_forms row g-4">
+				<div class="my-forms row g-4">
 					<div class="col-md-4">
 						<label for="exampleFormControlInput1" class="form-label titulo-label">E-mail</label>
 						<input type="email" class="form-control" id="email" placeholder="name@example.com" required 							pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$">
@@ -116,9 +116,9 @@
 				</div>
 			</div>
 			<div id="dados_representante_horta" style="display:none;">
-				<div class="secao_cadastro">
-					<p class="identificacao_secao mb-0"><em>Dados da horta:</em></p>
-					<div class="my_forms row g-4">
+				<div class="secao-cadastro">
+					<p class="identificacao-secao mb-0"><em>Dados da horta:</em></p>
+					<div class="my-forms row g-4">
 						<div class="col-md-3">
 							<label for="validationDefault01" class="form-label titulo-label">Nome da horta</label>
 							<input type="text" class="form-control" id="nomehorta" required>
@@ -153,7 +153,7 @@
 							</script>
 						</div>
 					</div>
-					<div class="my_forms row g-4">
+					<div class="my-forms row g-4">
 						<div class="col-md-3">
 							<label for="validationDefault01" class="form-label titulo-label">Logradouro</label>
 							<input type="text" class="form-control" id="enderecohorta" required>
@@ -180,14 +180,14 @@
 						</div>
 					</div>
 				</div>
-				<div class="secao_cadastro">
-					<p class="identificacao_secao mb-0"><em>Dados da produção:</em></p>
+				<div class="secao-cadastro">
+					<p class="identificacao-secao mb-0"><em>Dados da produção:</em></p>
 					<p class="titulo-label mb-4">A seguir, selecione os cultivos que a horta possui, e informe a área de
 						cultivo (em
 						m²):</p>
 					<div class="produtoshorta">
 						<div class="row g-4">
-							<p class="identificacao_secao mb-0"><u><i>Folhas e Verduras:</i></u></p>
+							<p class="identificacao-secao mb-0"><u><i>Folhas e Verduras:</i></u></p>
 							<!-- Agrião -->
 							<div class="col-md-3 produto-item">
 								<div class="d-flex align-items-center gap-2">
@@ -346,7 +346,7 @@
 							</div>
 						</div>
 						<div class="row g-4 mt-2">
-							<p class="identificacao_secao mb-0"><u><i>Legumes e Raízes:</i></u></p>
+							<p class="identificacao-secao mb-0"><u><i>Legumes e Raízes:</i></u></p>
 							<!-- Abobrinha -->
 							<div class="col-md-3 produto-item">
 								<div class="d-flex align-items-center gap-2">
@@ -457,7 +457,7 @@
 							</div>
 						</div>
 						<div class="row g-4 mt-2">
-							<p class="identificacao_secao mb-0"><u><i>Grãos, Sementes e Leguminosas:</i></u></p>
+							<p class="identificacao-secao mb-0"><u><i>Grãos, Sementes e Leguminosas:</i></u></p>
 							<!-- Ervilha -->
 							<div class="col-md-3 produto-item">
 								<div class="d-flex align-items-center gap-2">
@@ -504,7 +504,7 @@
 							</div>
 						</div>
 						<div class="row g-4 mt-2">
-							<p class="identificacao_secao mb-0"><u><i>Frutas:</i></u></p>
+							<p class="identificacao-secao mb-0"><u><i>Frutas:</i></u></p>
 							<!-- Acerola -->
 							<div class="col-md-3 produto-item">
 								<div class="d-flex align-items-center gap-2">
@@ -607,7 +607,7 @@
 							</div>
 						</div>
 						<div class="row g-4 mt-2">
-							<p class="identificacao_secao mb-0"><u><i>Outros:</i></u></p>
+							<p class="identificacao-secao mb-0"><u><i>Outros:</i></u></p>
 							<div class="col-md-5 produto-item outros-item">
 								<div class="d-flex align-items-center gap-2">
 									<input type="checkbox" class="form-check-input produto-check" id="outros">
@@ -642,8 +642,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="secao_cadastro" id="dados_voluntario" style="display:none;">
-				<div class="my_forms row g-4">
+			<div class="secao-cadastro" id="dados_voluntario" style="display:none;">
+				<div class="my-forms row g-4">
 					<div class="col-md-5">
 						<label for="validationDefault01" class="form-label titulo-label">Nome da horta que deseja apoiar</label>
 						<input type="text" class="form-control" id="nomecompleto" required>
@@ -680,8 +680,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="my_forms row g-4">
-					<p class="identificacao_secao mb-0 mt-5"><em>Se tiver selecionado a opção "Mão de obra", preencha os campos a seguir:</em></p>
+				<div class="my-forms row g-4">
+					<p class="identificacao-secao mb-0 mt-5"><em>Se tiver selecionado a opção "Mão de obra", preencha os campos a seguir:</em></p>
 					<div class="col-md-5">
 						<p class="titulo-label">Quais dias possui de disponibilidade para atuar na horta?</p>
 						<div class="form-check form-check-inline">
@@ -741,8 +741,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="my_forms row g-4" id="botao_envio" style="display:none;">
-				<div class="container_botao col-md-12">
+			<div class="my-forms row g-4" id="botao_envio" style="display:none;">
+				<div class="container-botao col-md-12">
 					<button type="submit" class="botao">Enviar</button>
 				</div>
 			</div>

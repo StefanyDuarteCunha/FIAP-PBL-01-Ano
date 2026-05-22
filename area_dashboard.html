@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,25 +14,299 @@
 	<title>Área do Gestor</title>
 	<link rel="icon" type="image/png" href="img/logo_HortaMap_folha.png">
 </head>
+
 <body>
 	<div class="logo">
-		<img src="img/logo_HortaMap_horizontal.png">
+		<img src="img/logo_HortaMap_horizontal.png" alt="HortaMap">
 	</div>
 	<div class="navegacao">
-  		<div class="esquerda">
-    		<h2><a href="index.html" target="_parent">Conheça a solução</a></h2>
-    		<h2><a href="fale_conosco.html" target="_parent">Fale conosco</a></h2>
+		<div class="esquerda">
+			<h2><a href="index.html" target="_parent">Conheça a solução</a></h2>
+			<h2><a href="fale_conosco.html" target="_parent">Fale conosco</a></h2>
 		</div>
 		<div class="direita">
 			<button type="button" class="menu"><a href="login.html" target="_parent">Login</a></button>
-			<button type="button" class="menu"><a href="cadastro.html" target="_parent">Experimente a Solução</a></button>
+			<button type="button" class="menu"><a href="cadastro.html" target="_parent">Experimente a
+					Solução</a></button>
 		</div>
 	</div>
-	<div class="conteudo">
-		<p>Teste Área do Gestor</p>
+	<div class="conteudo conteudo-dash">
+		<!-- LINHA 1 -->
+		<div class="row g-3 line-dash">
+			<div class="col-md-4">
+				<div class="caixa-dash">
+					<h4 class="title-box-dash">
+						Informações da Horta
+						<button class="btn-edit-box" type="button">
+							<i class="bi bi-pencil-square"></i>
+						</button>
+					</h4>
+					<p class="mb-1">
+						<i class="bi bi-flower3 icon-info"></i>
+						<b>Nome da horta:</b> Horta Comunitária Asa Norte
+					</p>
+					<p class="mb-1">
+						<i class="bi bi-geo-alt-fill icon-info"></i>
+						<b>Localização:</b> Asa Norte - Brasília / DF
+					</p>
+					<p class="mb-1">
+						<i class="bi bi-person-fill icon-info"></i>
+						<b>Responsável:</b> Maria Souza
+					</p>
+					<p class="mb-1">
+						<i class="bi bi-grid-3x3-gap-fill icon-info"></i>
+						<b>Canteiros ativos:</b> 12
+					</p>
+					<p class="mb-1">
+						<i class="bi bi-aspect-ratio icon-info"></i>
+						<b>Área cultivada:</b> 480 m²
+					</p>
+					<p class="mb-1">
+						<i class="bi bi-tools icon-info"></i>
+						<b>Última manutenção:</b> 18/05/2026
+					</p>
+					<p class="mb-1">
+						<i class="bi bi-exclamation-triangle-fill icon-info text-atencao"></i>
+						<b>Status atual:</b> <span class="text-atencao">Necessita de irrigação</span>
+					</p>
+					<p class="mb-1">
+						<i class="bi bi-calendar-event-fill icon-info"></i>
+						<b>Próximo mutirão:</b> 25/05/2026 - 14h00
+					</p>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="caixa-dash tabela-estoque-box">
+					<h4 class="title-box-dash mb-0">
+						Produtos em estoque
+						<button class="btn-edit-box" type="button">
+							<i class="bi bi-pencil-square"></i>
+						</button>
+					</h4>
+					<div class="barra-acoes">
+						<input type="text" class="input-busca" placeholder="Buscar produto...">
+						<button class="btn-adicionar">
+							+ Adicionar produto
+						</button>
+					</div>
+					<table class="tabela-estoque">
+						<thead>
+							<tr>
+								<th class="col-curta">Produto</th>
+								<th class="col-curta">Quantidade</th>
+								<th class="col-curta">Unidade</th>
+								<th class="col-curta">Status</th>
+								<th class="col-curta">Última colheita</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><span class="emoji-icon emoji-table">🥬</span>Alface</td>
+								<td class="text-center">20</td>
+								<td class="text-center">un</td>
+								<td><span class="status disponivel">Disponível</span></td>
+								<td class="text-center">18/05/2026</td>
+							</tr>
+							<tr>
+								<td><span class="emoji-icon emoji-table">🍅</span>Tomate</td>
+								<td class="text-center">15</td>
+								<td class="text-center">kg</td>
+								<td><span class="status baixo">Baixo estoque</span></td>
+								<td class="text-center">17/05/2026</td>
+							</tr>
+							<tr>
+								<td><span class="emoji-icon emoji-table">🥕</span>Cenoura</td>
+								<td class="text-center">8</td>
+								<td class="text-center">kg</td>
+								<td><span class="status disponivel">Disponível</span></td>
+								<td class="text-center">16/05/2026</td>
+							</tr>
+							<tr>
+								<td><span class="emoji-icon emoji-table">🧅</span>Cebolinha</td>
+								<td class="text-center">12</td>
+								<td class="text-center">maço</td>
+								<td><span class="status disponivel">Disponível</span></td>
+								<td class="text-center">18/05/2026</td>
+							</tr>
+							<tr>
+								<td><span class="emoji-icon emoji-table">🥦</span>Couve</td>
+								<td class="text-center">10</td>
+								<td class="text-center">un</td>
+								<td><span class="status baixo">Baixo estoque</span></td>
+								<td class="text-center">15/05/2026</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="alerta-estoque">
+						<div class="alerta-esquerda">
+							<p class="resumo-estoque text-atencao  mb-0"><i class="bi bi-exclamation-triangle-fill"></i><b>2 produtos com baixo estoque</b></p>
+						</div>
+						<a href="#" class="ver-todos-inline text-ver-todos">
+							Ver todos os produtos <i class="bi bi-arrow-right"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- LINHA 2 -->
+		<div class="row g-3 line-dash">
+			<div class="col-md-3">
+				<div class="caixa-dash voluntarios-box">
+					<h4 class="title-box-dash">
+						<span class="titulo-com-icone">Voluntários cadastrados</span>
+						<button class="btn-edit-box" type="button">
+							<i class="bi bi-pencil-square"></i>
+						</button>
+					</h4>
+					<div class="linha-voluntario line-voluntarios-ativos">
+						<i class="bi bi-people-fill icon-large"></i>
+						<div class="vol-info">
+							<span class="numero">05</span>
+							<span class="descricao">voluntários ativos</span>
+						</div>
+					</div>
+					<p class="linha-info mb-0">
+						<i class="bi bi-circle-fill icon-info"></i>
+						<b>03</b> disponíveis hoje
+					</p>
+					<p class="linha-info mb-0">
+						<i class="bi bi-calendar-event icon-info"></i>
+						<b>Próximo mutirão:</b> sábado (25/05/2026)
+					</p>
+					<p class="linha-info mb-2">
+						<i class="bi bi-person-check-fill icon-info"></i>
+						<b>Último cadastro:</b> João Silva
+					</p>
+					<a href="#" class="ver-todos-inline text-ver-todos">
+						Ver voluntários <i class="bi bi-arrow-right"></i>
+					</a>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="caixa-dash">
+					<h4 class="title-box-dash">
+						Próximo mutirão
+						<button class="btn-edit-box" type="button">
+							<i class="bi bi-pencil-square"></i>
+						</button>
+					</h4>
+					<div class="linha-voluntario line-voluntarios-ativos">
+						<i class="bi bi-calendar-event icon-large"></i>
+						<div class="vol-info">
+							<span class="numero">25/05/2026</span>
+							<span class="descricao">às 14h</span>
+						</div>
+					</div>
+					<p class="linha-info mb-3">
+						<i class="bi bi-geo-alt-fill icon-info"></i>
+						Horta Comunitária Asa Norte
+					</p>
+					<p class="linha-info mb-4">
+						<i class="bi bi-check-circle-fill icon-info"></i>
+						<b>08</b> voluntários confirmados
+					</p>
+					<a href="#" class="ver-todos-inline text-ver-todos">
+						Ver detalhes <i class="bi bi-arrow-right"></i>
+					</a>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="caixa-dash">
+					<h4 class="title-box-dash">
+						Alertas Importantes
+						<button class="btn-edit-box" type="button">
+							<i class="bi bi-pencil-square"></i>
+						</button>
+					</h4>
+					<p class="linha-info mb-3">
+						<i class="bi bi-exclamation-triangle-fill text-danger icon-info"></i>
+						Estoque baixo de <b>tomate</b>
+					</p>
+					<p class="linha-info mb-3">
+						<i class="bi bi-droplet-fill text-primary icon-info"></i>
+						Irrigação pendente no <b>setor 08</b>
+					</p>
+					<p class="linha-info mb-3">
+						<i class="bi bi-calendar-check icon-info"></i>
+						Mutirão amanhã às <b>14h00</b>
+					</p>
+					<p class="linha-info mb-3">
+						<i class="bi bi-person-plus-fill icon-info"></i>
+						Precisamos de <b>mais voluntários</b>
+					</p>
+					<a href="#" class="ver-todos-inline text-ver-todos">
+						Ver todos os alertas <i class="bi bi-arrow-right"></i>
+					</a>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="caixa-dash">
+					<h4 class="title-box-dash">
+						Produção Atual
+						<button class="btn-edit-box" type="button">
+							<i class="bi bi-pencil-square"></i>
+						</button>
+					</h4>
+					<p class="linha-info mb-4">
+						<span class="emoji-icon emoji-info">🌱</span>
+						<span class="numero">10</span> produtos ativos
+					</p>
+					<p class="linha-info mb-4">
+						<i class="bi bi-basket icon-info"></i>
+						<span class="numero">02</span> em colheita
+					</p>
+					<p class="linha-info mb-4">
+						<i class="bi bi-calendar-week-fill icon-info"></i>
+						<span class="numero">01</span> fora de safra
+					</p>
+					<a href="#" class="ver-todos-inline text-ver-todos">
+						Ver produção <i class="bi bi-arrow-right"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- LINHA 3 -->
+		<div class="row g-3 line-dash">
+			<div class="col-md-12">
+				<div class="caixa-dash">
+					<h4 class="title-box-dash">
+						Atividades Recentes
+						<button class="btn-edit-box" type="button">
+							<i class="bi bi-pencil-square"></i>
+						</button>
+					</h4>
+					<table class="table table-borderless atividades-recentes">
+						<tbody>
+							<tr>
+								<td class="icone"><i class="bi bi-box-seam icon-large"></i></td>
+								<td class="line-table-atividades">
+									<b>João Silva</b> atualizou<br> o estoque<br>
+									<small>Hoje, 09:15</small>
+								</td>
+								<td class="icone"><i class="bi bi-basket-fill icon-large"></i></td>
+								<td class="line-table-atividades">
+									Nova colheita registrada — <br><b>Tomate e Alface</b><br>
+									<small>Ontem, 17:30</small>
+								</td>
+								<td class="icone"><i class="bi bi-person-lines-fill icon-large"></i></td>
+								<td class="line-table-atividades">
+									2 voluntários cadastrados — <br><b>Maria e Pedro</b><br>
+									<small>Ontem, 16:45</small>
+								</td>
+								<td class="icone"><i class="bi bi-calendar-event-fill icon-large"></i></td>
+								<td>
+									Mutirão agendado — <br><b>25/05/2026 às 14h</b><br>
+									<small>Ontem, 15:20</small>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 	</div>
-	<footer>
-		<p>© 2026 Hortamap  |  Todos contra a fome</p>
+	<footer class="mb-0">
+		<p>© 2026 Hortamap | Todos contra a fome</p>
 		<a href="https://www.instagram.com/hortamap/" target="_blank"><i class="bi bi-instagram icon-rodape"></i></a>
 		<a href="https://www.linkedin.com" target="_blank"><i class="bi bi-linkedin icon-rodape"></i></a>
 		<a href="https://www.youtube.com/@HortaMapSolucao" target="_blank"><i class="bi bi-youtube icon-rodape"></i></a>
@@ -40,4 +315,5 @@
 		<a href="mailto:hortamapsolucao@gmail.com" target="_blank"><i class="bi bi-envelope icon-rodape"></i></a>
 	</footer>
 </body>
+
 </html>

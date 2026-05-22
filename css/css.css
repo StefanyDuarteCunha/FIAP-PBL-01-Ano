@@ -1,44 +1,45 @@
-body { /*configura o conteúdo como um todo*/
+/* ------------------------------------ páginas gerais ------------------------------------ */
+
+body { /* configura o conteúdo como um todo */
     background-color: #bece94;
     margin: 0;
     display: flex;
     flex-direction: column;
 }
 
-.logo img { /*configura a imagem que aparece no topo das páginas*/
+.logo img { /* imagem do topo */
     padding-top: 10px;
     width: 10%;
     height: auto;
-    align-items: center;
     display: block;
     margin: auto;
 }
 
-.navegacao { /*configura o menu de navegação*/
+.navegacao { /* menu de navegação */
     font-family: "Quicksand", sans-serif;
     font-weight: bold;
     background-color: rgba(255, 255, 255, 0.4);
     display: flex;
-    justify-content: space-between; /*separa os grupos*/
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 30px 10px 30px;
+    padding: 10px 30px;
 }
 
-.navegacao h2 { /*configura o texto do menu de navegação*/
+.navegacao h2 { /* menu sem formato de botão */
     font-family: "Quicksand", sans-serif;
     font-size: 15px;
     font-weight: bold;
     margin: auto;
 }
 
-.esquerda, .direita { /*configura os lados do menu de navegação*/
+.esquerda, .direita { /* menu - separação entre botões e menu */
     display: flex;
     flex-direction: row;
-    gap: 30px; /*controla o quão juntinhos eles ficam*/
-    color:#382e16;
+    gap: 30px;
+    color: #382e16;
 }
 
-.menu { /*configura os botões do menu de navegação*/
+.menu { /* menu em formato de botões */
     border-radius: 40px;
     padding: 10px 20px;
     background-color: #29461367;
@@ -47,31 +48,31 @@ body { /*configura o conteúdo como um todo*/
     font-weight: bold;
 }
 
-.menu:hover { /*configura os botões do menu de navegação quando passa o mouse*/
+.menu:hover { /* menu em formato de botões - ao passar o mouse */
     background-color: #236622;
     color: white;
 }
 
-.esquerda h2:hover { /*configura os textos do menu de navegação quando passa o mouse*/
+.esquerda h2:hover { /* menu sem formato de botão - ao passar o mouse */
     text-decoration: underline;
     color: #a96238;
 }
 
-a, a:visited, a:hover, a:active { /*configura os links do menu de navegação, para evitar configuração estranha*/
-    text-decoration: none; /*tira o sublinhado*/
-    color: inherit;        /*usa a cor do elemento pai*/
+a, a:visited, a:hover, a:active { /* para evitar decoração de link */
+    text-decoration: none;
+    color: inherit;
 }
 
-.conteudo { /*configura o conteúdo entre o menu de navegação e o rodapé*/
-    min-height: calc(100vh - 200px); /* ajuste conforme a altura do seu footer */
+.conteudo { /* área entre menu e rodapé */
+    min-height: calc(100vh - 200px);
 }
 
-.container_botao { /*configura os botões da página*/
+.container-botao { /* container dos botões submit */
     display: flex;
     justify-content: flex-end;
 }
 
-.botao { /*configura os botões da página*/
+.botao { /* botão submit */
     margin-top: 20px;
     border-radius: 40px;
     padding: 10px 20px;
@@ -81,12 +82,12 @@ a, a:visited, a:hover, a:active { /*configura os links do menu de navegação, p
     font-weight: bold;
 }
 
-.botao:hover { /*configura os botões da página quando passa o mouse*/
+.botao:hover { /* botão submit - ao passar o mouse */
     background-color: #236622;
     color: white;
 }
 
-footer { /*configura o rodapé*/
+footer { /* rodapé */
     padding: 10px 0px;
     font-family: "Quicksand", sans-serif;
     background-color: rgba(255, 255, 255, 0.4);
@@ -94,99 +95,98 @@ footer { /*configura o rodapé*/
     gap: 15px;
 }
 
-footer p { /*configura o texto do rodapé*/
+footer p { /* rodapé */
     font-size: 15px;
 }
 
-.icon-rodape { /*configura os icones do rodapé*/
+.icon-rodape { /* rodapé */
     font-size: 25px;
     margin: 0px 10px;
 }
 
-
-/* ------------------------------------ página INDEX ------------------------------------ */
-.caixa { /*configura as caixas de conteúdo no index*/
-    margin: 30px 50px;
-    padding: 40px;
-    border-radius: 100px;
-    background-color: rgba(239, 226, 226, 0.4);
-}
-
-.texto { /*configura os textos dentro das caixas de conteúdo no index*/
-    align-items: center;
-    display: block;
-    margin: auto; 
-}
-
-.texto h3 { /*configura os títulos dentro das caixas de conteúdo no index*/
-    text-align: center;
-    margin-bottom: 30px;
-    font-weight: bold;
-    font-family: "Quicksand", sans-serif;
-}
-
-.texto p { /*configura os parágrafos dentro das caixas de conteúdo no index*/
-    text-align: justify;
-    font-size: 18px;
-}
-
-.imgdireita, .imgesquerda { /*configura as imagens no index*/
-    max-width: 100%; /* Não ultrapassa o tamanho do contêiner */
-    height: auto;    /* Mantém a proporção original */
-    object-fit: cover;   /* Preenche sem distorcer, cortando se necessário */
-    object-position: center; /* Centraliza a imagem */
-}
-
-.imgdireita { /*configura as imagens à direita no index*/
-    border-radius: 0px 100px 100px 0px;
-}
-
-.imgesquerda { /*configura as imagens à esquerda no index*/
-    border-radius: 100px 0px 0px 100px;
-}
-
-/* ------------------------------------ página FALE CONOSCO ------------------------------------ */
-.my_forms { /*configura o formulário*/
+.my-forms { /* formulários */
     margin: auto;
     display: flex;
     justify-content: center;
 }
 
-.text_fale { /*configura o titulo da página, que apresenta duas palavras com cores diferentes*/
+.text-duo-color { /* titulo com duas cores */
     font-weight: bold;
     justify-content: center;
     font-size: 30px;
     border-right: 2px solid rgba(255, 255, 255, 0.4);
 }
 
-.fale { /*configura apenas a palavra fale no título*/
-    color:#236622;
+.color1 { /* titulo com duas cores - cor um */
+    color: #236622;
 }
 
-.conosco { /*configura apenas a palavra conosco no título*/
-    color:#a96238;
+.color2 { /* titulo com duas cores - cor dois */
+    color: #a96238;
 }
 
-.text_explicacao { /*configura o parágrafo de apresentação da página*/
+.text-explicacao { /* texto de introdução da página - vem junto do text-duo-color */
     font-size: 16px;
     padding: 10px 20px;
     justify-content: center;
 }
 
-.titulo-label { /*configura os títulos dos campos de entrada de informação*/
+.titulo-label { /* titulos em formulários */
     font-weight: bold;
 }
 
-.texto-icon { /*configura os textos da caixa de e-mail e telefone, para apresentar junto ao ícone*/
+/* ------------------------------------ página INDEX ------------------------------------ */
+.caixa { /* caixas de fundo */
+    margin: 30px 50px;
+    padding: 40px;
+    border-radius: 100px;
+    background-color: rgba(239, 226, 226, 0.4);
+}
+
+.texto { /* textos da página */
+    align-items: center;
+    display: block;
+    margin: auto;
+}
+
+.texto h3 { /* título das caixas */
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+}
+
+.texto p { /* parágrafos */
+    text-align: justify;
+    font-size: 18px;
+}
+
+.imgdireita, .imgesquerda { /*ajuste de imagem */
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.imgdireita { /*ajuste de imagem */
+    border-radius: 0px 100px 100px 0px;
+}
+
+.imgesquerda { /*ajuste de imagem */
+    border-radius: 100px 0px 0px 100px;
+}
+
+/* ------------------------------------ página FALE CONOSCO ------------------------------------ */
+.texto-icon { /* icones do fale conosco */
     display: inline-block;
 }
 
-.redes-fale-conosco { /*configura os ícones da caixa de redes sociais do fale conosco*/
+.redes-fale-conosco { /* icones do fale conosco */
     font-size: 50px;
     padding: 30px;
 }
 
-.caixa-contatos { /*configura o container onde está as redes socias do fale conosco*/
+.caixa-contatos { /* caixas de redes sociais e outros contatos */
     background-color: rgba(255, 255, 255, 0.4);
     margin: auto;
     margin-top: 50px;
@@ -196,58 +196,317 @@ footer p { /*configura o texto do rodapé*/
     text-align: center;
 }
 
-.intervalo-entre-campos{ /*configura o intervalo entre os telefones*/
+.intervalo-entre-campos { /* intervalo entre contatos */
     padding-right: 40px;
 }
 
-.fale-atendente { /*configura um espaço entre os ícones e o texto que os acompanha*/
+.fale-atendente { /* contato com atendente */
     padding-right: 10px;
 }
 
-
 /* ------------------------------------ página LOGIN ------------------------------------ */
-.login_page, .frase-impacto, .forms-login {
+.login-page, .frase-impacto, .forms-login { /* elementros centrais da página */
     margin: auto;
     padding: 50px;
 }
-.frase-impacto {
+
+.frase-impacto { /* elementos centrais da página - frase que chama atenção */
     justify-content: center;
 }
 
-.container_login { /*configura os botões da página*/
-    display: inline; 
+.container-login { /* container botão */
+    display: inline;
 }
 
-h1 {
+h1 { /* frase de impacto */
     font-family: "Quicksand", sans-serif;
     font-weight: bold;
     font-size: 30px;
     margin-bottom: 50px;
 }
 
-.senha {
+.senha { /* campo senha */
     margin-top: 10px;
 }
 
-.forms-login {
+.forms-login { /* formulário de login */
     border-left: 5px solid #236622;
 }
 
 /* ------------------------------------ página DASHBOARD ------------------------------------ */
+.conteudo-dash { /* container total da página */
+    margin: 50px 10px 30px 10px;
+}
 
+.conteudo-dash .row { /* cada linha do dashboard: colunas com mesma altura */
+    align-items: stretch;
+}
 
+.line-dash { /* cada linha de conteúdo do dash */
+    margin-bottom: 20px;
+}
+
+.caixa-dash { /* cada caixa ocupa 100% da altura da coluna */
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.title-box-dash { /* título de cada caixa */
+    font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+    color: #236622;
+    padding-bottom: 10px;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text-atencao { /* texto informando atenção */
+    color: chocolate;
+    font-weight: bold;
+}
+
+.atividades-recentes td { /* tabela de atividades recentes - coluna */
+    vertical-align: middle;
+    padding: 10px 5px;
+}
+
+.atividades-recentes .icone { /* tabela de atividades recentes - ícones */
+    width: 40px;
+    text-align: center;
+    font-size: 22px;
+    color: #236622;
+}
+
+.atividades-recentes small { /* tabela de atividades recentes - textos pequenos */
+    color: #555;
+}
+
+.tabela-estoque-box { /* Caixa da tabela */
+    background-color: #dce8c7; /* verde claro da referência */
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.icon-info, .icon-large, .emoji-table { /* ícones e emojis */
+    color: #236622;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+.icon-info, .emoji-info, .emoji-table { /* ícones pequenos e emojis - tamanho */
+    font-size: 20px;
+}
+
+.icon-large { /* ícones grandes - tamanho */
+    font-size: 50px;
+}
+
+.emoji-info { /* emoji - margem */
+    margin-right: 13px;
+}
+
+.emoji-table { /* emoji - margem */
+    margin: 0px 20px 0px 30px;
+}
+
+.bi-exclamation-triangle-fill { /* Ícone do estoque alerta */
+    margin-right: 20px;
+}
+
+.btn-edit-box { /* botão de edição - lápis */
+    background: transparent;
+    border: none;
+    color: #236622;
+    cursor: pointer;
+    padding: 0;
+}
+
+.btn-edit-box i { /* botão de edição - lápis */
+    font-size: 18px;
+}
+
+.btn-edit-box:hover i { /* botão de edição - lápis - ao passar o mouse */
+    color: #a96238;
+}
+
+.alerta-estoque { /* alerta de estoque baixo */
+    background-color: #dce8c7;
+    padding: 12px 18px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-ver-todos { /* link para ver mais detalhes */
+    color: #236622;
+    font-weight: bold;
+    text-align: end;
+}
+
+.text-ver-todos:hover { /* link para ver mais detalhes */
+    color: #a96238;
+}
+
+.tabela-estoque { /* Tabela sem bordas Bootstrap */
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tabela-estoque thead th { /* Tabela sem bordas Bootstrap - cabeçalho */
+    color: black;
+    font-weight: bold;
+    padding: 8px 0;
+    border-bottom: 2px solid #b7c7a3;
+    text-align: center;
+    background-color: #29461343;
+}
+
+.tabela-estoque td { /* Tabela sem bordas Bootstrap - linhas */
+    padding: 10px 0;
+    border-bottom: 1px solid #c7d6b4;
+    line-height: 5px;
+}
+
+.col-curta { /* para colocar a tabela com tamanho de colunas mais equilibrado*/
+    white-space: nowrap;
+    width: 1%;
+}
+
+.text-center { /* para alinhar o texto na tabela */ 
+    text-align: center;
+}
+
+.status { /* Status - tabela estoque */
+    font-weight: bold;
+    padding: 0px 10px;
+    border-radius: 10px;
+}
+
+.status.disponivel { /* Status - itens disponíveis */
+    color: #236622;
+    background-color: #29461343;
+}
+
+.status.baixo { /* Status - itens em baixa */
+    color: #a96238;
+    background-color: #a9613841;
+}
+
+.resumo-estoque { /* Texto abaixo da tabela */
+    margin-top: 12px;
+    margin-bottom: 5px;
+}
+
+.barra-acoes { /* Busca - Caixa verde clara */
+    background-color: #dce8c7; /* mesmo tom da referência */
+    padding: 15px 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-busca { /* Campo de busca */
+    width: 250px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #b7c7a3;
+    font-size: 15px;
+    outline: none;
+    margin: none;
+}
+
+.input-busca::placeholder { /* Campo de busca */
+    color: #6b6b6b;
+}
+
+.btn-adicionar { /* Botão verde escuro - adicionar produtos */
+    background-color: #236622;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    margin: none;
+}
+
+.btn-adicionar:hover { /* Botão verde escuro - adicionar produtos - passar o mouse */
+    background-color: #a96138;
+}
+
+.line-table-atividades { /* texto das últimas atividades notificadas */
+    border-right: 2px solid #2946132c;
+}
+
+td .icon-large { /* texto das últimas atividades notificadas - icones */
+    padding: 10px;
+}
+
+.voluntarios-box { /* Caixa específica dos voluntários */
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.linha-voluntario { /* Linha com número grande + texto pequeno */
+    display: flex;
+    align-items: center;
+    gap: 12px; /* espaço entre ícone e texto */
+    margin-bottom: 12px;
+}
+
+.line-voluntarios-ativos { /* Linha com número grande + texto pequeno */
+    border-bottom: 2px solid #2946132c;
+}
+
+.vol-info { /* Linha com número grande + texto pequeno */
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.numero { /* Linha com número grande + texto pequeno */
+    font-size: 28px;
+    font-weight: bold;
+    color: #236622;
+}
+
+.vol-info .descricao { /* Linha com número grande + texto pequeno */
+    font-size: 14px;
+    margin-top: -2px;
+}
+
+.linha-info { /* Linhas com ícones */
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+}
 
 /* ------------------------------------ página CADASTRO ------------------------------------ */
-.tipo_cadastro { /*configura os botões de tipo de cadastro*/
+.tipo-cadastro { /* div onde está os botões de tipo de cadastro */
     margin-top: 20px;
     display: flex;
     flex-direction: row;
-    gap: 30px; /*controla o quão juntinhos eles ficam*/
+    gap: 30px;
     align-items: center;
-    padding: 10px 30px 10px 30px;
+    padding: 10px 30px;
 }
 
-.cadastro_button { /*configura os botões de cadastro*/
+.forms-cadastro { /* div onde está os botões de tipo de cadastro */
+    margin-bottom: 30px;
+}
+
+.cadastro-button { /* botão de tipo de cadastro */
     border-radius: 40px;
     padding: 10px 20px;
     background-color: rgba(255, 255, 255, 0.4);
@@ -257,39 +516,35 @@ h1 {
     color: #236622;
 }
 
-.cadastro_button:hover { /*configura os botões do menu de navegação quando passa o mouse*/
+.cadastro-button:hover { /* botão de tipo de cadastro - quando passa o mouse */
     background-color: #236622;
     color: white;
 }
 
-.cadastro_button.active { /*configura os botões do menu de navegação quando passa o mouse*/
+.cadastro-button.active { /* botão de tipo de cadastro - quando está ativo */
     background-color: #23662268;
     color: black;
 }
 
-.secao_cadastro {
+.secao-cadastro { /* container do cadastro */
     margin-top: 20px;
     padding-bottom: 30px;
     border-bottom: 2px dashed #23662245;
 }
 
-.identificacao_secao {
+.identificacao-secao { /* titulo da seção */
     font-family: "Quicksand", sans-serif;
     font-size: 15px;
 }
 
-.forms_cadastro {
-    margin-bottom: 30px;
+.produto-item .form-check-label { /* cadastro de produto - seleção */
+    width: 110px;
 }
 
-.produto-item .form-check-label {
-    width: 110px; /* largura fixa para alinhar os nomes */
+.produto-item .area-input { /* cadastro de produto - quantidade */
+    width: 100px;
 }
 
-.produto-item .area-input {
-    width: 100px; /* já está no seu padrão */
-}
-
-.produto-item .form-check-input {
-    margin-top: 0; /* alinha verticalmente */
+.produto-item .form-check-input { /* cadastro de produto */
+    margin-top: 0;
 }
