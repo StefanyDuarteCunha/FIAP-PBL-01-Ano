@@ -17,7 +17,7 @@
 
 <body>
 	<div class="logo">
-		<img src="img/logo_HortaMap_horizontal.png">
+		<a href="index.html" target="_parent"><img src="img/logo_HortaMap_horizontal.png" alt="HortaMap"></a>
 	</div>
 	<div class="navegacao">
 		<div class="esquerda">
@@ -41,9 +41,9 @@
 				</p>
 			</div>
 		</div>
-		<form class="forms-cadastro ms-5 me-5">
+		<form class="forms-cadastro ms-5 me-5" id="formulario_cadastro_JS">
 			<div class="tipo-cadastro g-4">
-				<button type="button" class="cadastro-button" id="btnResponsavel">Gestor da horta</button>
+				<button type="button" class="cadastro-button" id="btnResponsavel">Gestor</button>
 				<button type="button" class="cadastro-button" id="btnVoluntario">Voluntário</button>
 				<button type="button" class="cadastro-button" id="btnComunidade">Comunidade</button>
 				<script>
@@ -60,37 +60,26 @@
 				<p class="identificacao-secao mb-0"><em>Dados pessoais:</em></p>
 				<div class="my-forms row g-4">
 					<div class="col-md-4">
-						<label for="validationDefault01" class="form-label titulo-label">Nome Completo</label>
-						<input type="text" class="form-control" id="nomecompleto" required>
+						<label for="nomecompleto" class="form-label titulo-label">Nome Completo</label>
+						<input type="text" class="form-control" id="nomecompleto" pattern="^[A-Za-zÀ-ÿ]{2,}(?:\s+[A-Za-zÀ-ÿ]{2,})+$" title="Digite o seu nome e sobrenome com pelo menos 2 letras em cada" placeholder="Digite o seu nome e sobrenome" required>
 					</div>
 					<div class="col-md-4">
-						<label for="validationDefault01" class="form-label titulo-label">CPF</label>
-						<input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" required pattern="^\d{3}\.\d{3}\.\d{3}\-\d{2}$">
-						<script>
-							document.getElementById('cpf').addEventListener('input', function () {
-								let v = this.value.replace(/\D/g, ''); // remove tudo que não é número
-								v = v.slice(0, 11); //impede digitar mais que 11 dígitos
-								if (v.length > 3) v = v.replace(/(\d{3})(\d)/, '$1.$2');
-								if (v.length > 6) v = v.replace(/(\d{3})(\d)/, '$1.$2');
-								if (v.length > 9) v = v.replace(/(\d{3})(\d{2})$/, '$1-$2');
-								this.value = v;
-							});
-						</script>
+						<label for="cpf" class="form-label titulo-label">CPF</label>
+						<input type="text" maxlength="11"  minlength="11" class="form-control" id="cpf" placeholder="000.000.000-00" inputmode="numeric" required pattern="\d{11}" title="Digite o cpf com 11 caracteres">
 					</div>
 					<div class="col-md-4">
-						<label for="validationDefault01" class="form-label titulo-label">Data de Nascimento</label>
+						<label for="datanascimento" class="form-label titulo-label">Data de Nascimento</label>
 						<input type="date" class="form-control" id="datanascimento" required>
 					</div>
 				</div>
 				<div class="my-forms row g-4">
 					<div class="col-md-4">
-						<label for="exampleFormControlInput1" class="form-label titulo-label">E-mail</label>
-						<input type="email" class="form-control" id="email" placeholder="name@example.com" required 							pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$">
+						<label for="email" class="form-label titulo-label">E-mail</label>
+						<input type="email" class="form-control" id="email" placeholder="name@example.com" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" title="Digite o email no formato nome@example.com" required>
 					</div>
 					<div class="col-md-4">
-						<label for="Telefone" class="form-label titulo-label">Número de Celular</label>
-						<input type="tel" class="form-control" id="telefone" placeholder="(99) 99999-9999"
-							maxlength="15" required pattern="^\(\d{2}\)\s\d{4,5}-\d{4}$">
+						<label for="telefone" class="form-label titulo-label">Número de Celular</label>
+						<input type="tel" class="form-control" id="telefone" placeholder="(99) 99999-9999" maxlength="15" pattern="^\(\d{2}\)\s\d{4,5}-\d{4}$" title="Digite o ddd e o número de telefone completo" required>
 						<script>
 							document.getElementById('telefone').addEventListener('input', function (e) {
 								let value = e.target.value.replace(/\D/g, '');
@@ -121,7 +110,7 @@
 					<div class="my-forms row g-4">
 						<div class="col-md-3">
 							<label for="validationDefault01" class="form-label titulo-label">Nome da horta</label>
-							<input type="text" class="form-control" id="nomehorta" required>
+							<input type="text" class="form-control" id="nomehorta" title="Digite o nome da horta" placeholder="Digite o nome da horta" required>
 						</div>
 						<div class="col-md-3">
 							<p class="titulo-label">Tipo da horta</p>
@@ -137,12 +126,12 @@
 							</div>
 						</div>
 						<div class="col-md-3">
-							<label for="validationDefault01" class="form-label titulo-label">Tamanho da horta
+							<label for="tamanhohorta" class="form-label titulo-label">Tamanho da horta
 								(m²)</label>
-							<input type="number" class="form-control" id="tamanhohorta" required>
+							<input type="number" class="form-control" id="tamanhohorta" placeholder="Digite o tamanho da horta" required>
 						</div>
 						<div class="col-md-3">
-							<label for="validationDefault01" class="form-label titulo-label">CEP</label>
+							<label for="cep" class="form-label titulo-label">CEP</label>
 							<input type="text" class="form-control" id="cep" placeholder="00000-000" minlength="9" maxlength="9" required pattern="^\d{5}\-\d{3}$">
 							<script>
 								document.getElementById('cep').addEventListener('input', function () {
@@ -155,28 +144,57 @@
 					</div>
 					<div class="my-forms row g-4">
 						<div class="col-md-3">
-							<label for="validationDefault01" class="form-label titulo-label">Logradouro</label>
-							<input type="text" class="form-control" id="enderecohorta" required>
+							<label for="enderecohorta" class="form-label titulo-label">Logradouro</label>
+							<input type="text" class="form-control" id="enderecohorta" placeholder="Rua, Avenida, Travessa, etc" required>
 						</div>
 						<div class="col-md-1">
-							<label for="validationDefault01" class="form-label titulo-label">Número</label>
+							<label for="numerohorta" class="form-label titulo-label">Número</label>
 							<input type="text" class="form-control" id="numerohorta" required>
 						</div>
 						<div class="col-md-2">
-							<label for="validationDefault01" class="form-label titulo-label">Complemento</label>
+							<label for="complementohorta" class="form-label titulo-label">Complemento</label>
 							<input type="text" class="form-control" id="complementohorta">
 						</div>
 						<div class="col-md-2">
-							<label for="validationDefault01" class="form-label titulo-label">Bairro</label>
+							<label for="bairrohorta" class="form-label titulo-label">Bairro</label>
 							<input type="text" class="form-control" id="bairrohorta" required>
 						</div>
 						<div class="col-md-2">
-							<label for="validationDefault01" class="form-label titulo-label">Cidade</label>
+							<label for="cidadehorta" class="form-label titulo-label">Cidade</label>
 							<input type="text" class="form-control" id="cidadehorta" required>
 						</div>
 						<div class="col-md-2">
-							<label for="validationDefault01" class="form-label titulo-label">Estado</label>
-							<input type="text" class="form-control" id="estadohorta" required>
+							<label for="estadohorta" class="form-label titulo-label">Estado</label>
+							<input class="form-control" list="estados" name="estadohorta" id="estadohorta" required>
+							<datalist id="estados">
+								<option value="AC"></option>
+								<option value="AL"></option>
+								<option value="AM"></option>
+								<option value="AP"></option>
+								<option value="BA"></option>
+								<option value="CE"></option>
+								<option value="DF"></option>
+								<option value="ES"></option>
+								<option value="GO"></option>
+								<option value="MA"></option>
+								<option value="MG"></option>
+								<option value="MS"></option>
+								<option value="MT"></option>
+								<option value="PA"></option>
+								<option value="PB"></option>
+								<option value="PE"></option>
+								<option value="PI"></option>
+								<option value="PR"></option>
+								<option value="RJ"></option>
+								<option value="RN"></option>
+								<option value="RO"></option>
+								<option value="RR"></option>
+								<option value="RS"></option>
+								<option value="SC"></option>
+								<option value="SE"></option>
+								<option value="SP"></option>
+								<option value="TO"></option>
+							</datalist>
 						</div>
 					</div>
 				</div>
@@ -645,8 +663,8 @@
 			<div class="secao-cadastro" id="dados_voluntario" style="display:none;">
 				<div class="my-forms row g-4">
 					<div class="col-md-5">
-						<label for="validationDefault01" class="form-label titulo-label">Nome da horta que deseja apoiar</label>
-						<input type="text" class="form-control" id="nomecompleto" required>
+						<label for="nomehortaapoio" class="form-label titulo-label">Nome da horta que deseja apoiar</label>
+						<input type="text" class="form-control" id="nomehortaapoio" title="Digite o nome da horta" placeholder="Digite o nome da horta" required>
 					</div>
 					<div class="col-md-3">
 						<p class="titulo-label">Já fez contato com o responsável?</p>
@@ -748,6 +766,13 @@
 			</div>
 		</form>
 		<script>
+			document.getElementById("formulario_cadastro_JS").addEventListener("submit", function (e) {
+				e.preventDefault();
+				alert("Cadastro encaminhado com sucesso! Em breve enviaremos detalhes sobre o seu cadastro.");
+				this.reset();
+			});
+		</script>
+		<script>
 			const botao1 = document.getElementById('btnResponsavel');
 			const botao2 = document.getElementById('btnVoluntario');
 			const botao3 = document.getElementById('btnComunidade');
@@ -755,22 +780,42 @@
 			const secao2 = document.getElementById('dados_representante_horta');
 			const secao3 = document.getElementById('dados_voluntario');
 			const secao4 = document.getElementById('botao_envio');
+
+			// Função auxiliar para ativar uma seção
+			function mostrar(secao) {
+				secao.style.display = 'block';
+				secao.querySelectorAll('input, select, textarea').forEach(c => {
+        			// NÃO habilitar os campos controlados pelos checkboxes
+        			if (c.classList.contains('area-input')) return;
+        			if (c.classList.contains('nome-outro')) return;
+        			c.disabled = false;
+   				 });
+			}
+
+			// Função auxiliar para esconder uma seção
+			function esconder(secao) {
+				secao.style.display = 'none';
+				secao.querySelectorAll('input, select, textarea').forEach(c => c.disabled = true);
+			}
+
 			botao1.addEventListener('click', () => {
-				secao1.style.display = 'block';
-				secao2.style.display = 'block';
-				secao3.style.display = 'none';
+				mostrar(secao1);
+				mostrar(secao2);
+				esconder(secao3);
 				secao4.style.display = 'block';
 			});
+
 			botao2.addEventListener('click', () => {
-				secao1.style.display = 'block';
-				secao2.style.display = 'none';
-				secao3.style.display = 'block';
+				mostrar(secao1);
+				esconder(secao2);
+				mostrar(secao3);
 				secao4.style.display = 'block';
 			});
+
 			botao3.addEventListener('click', () => {
-				secao1.style.display = 'block';
-				secao2.style.display = 'none';
-				secao3.style.display = 'none';
+				mostrar(secao1);
+				esconder(secao2);
+				esconder(secao3);
 				secao4.style.display = 'block';
 			});
 		</script>
