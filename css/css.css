@@ -208,6 +208,25 @@ footer p { /* rodapé */
     right: -60px; /* aproxima da borda direita */
 }
 
+@media (max-width: 768px) { /* tablet */
+    .carousel-control-prev {
+    left: -30px; /* aproxima da borda esquerda */
+}
+
+.carousel-control-next {
+    right: -30px; /* aproxima da borda direita */
+}
+}
+
+@media (max-width: 480px) { /* celular */
+    .carousel-control-prev {
+    left: -10px; /* aproxima da borda esquerda */
+}
+
+.carousel-control-next {
+    right: -10px; /* aproxima da borda direita */
+}
+}
 
 /* ------------------------------------ página FALE CONOSCO ------------------------------------ */
 .texto-icon { /* icones do fale conosco */
