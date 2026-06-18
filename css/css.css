@@ -18,7 +18,7 @@ body { /* configura o conteúdo como um todo */
 .navegacao { /* menu de navegação */
     font-family: "Quicksand", sans-serif;
     font-weight: bold;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.3);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -93,7 +93,7 @@ a, a:visited, a:hover, a:active { /* para evitar decoração de link */
 footer { /* rodapé */
     padding: 0.625rem 0;
     font-family: "Quicksand", sans-serif;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.2);
     text-align: center;
     gap: 1rem;
 }
@@ -142,7 +142,7 @@ footer p { /* rodapé */
 .caixa { /* caixas de fundo */
     margin: 1rem 3.125rem;
     padding: 1.25rem 1.25rem;
-    border-radius: 6.25em;
+    border-radius: 3.25em;
     background-color: rgba(239, 226, 226, 0.4);
     min-height: 35rem;
     max-height: 35rem;
@@ -186,15 +186,28 @@ footer p { /* rodapé */
     height: auto;
     object-fit: cover;
     object-position: center;
-    border-radius: 0 6.25em 6.25em 0;
+    border-radius: 0 3.25em 3.25em 0;
 }
 
 .video-container iframe {
     width: 100%;
     max-width: 43.75rem;
     height: 24.625rem;
-    border-radius: 0 6.25em 6.25em 0;
+    border-radius: 0 3.25em 3.25em 0;
 }
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    filter: invert(40%) sepia(22%) saturate(2281%) hue-rotate(74deg) brightness(92%) contrast(92%);
+}
+
+.carousel-control-prev {
+    left: -60px; /* aproxima da borda esquerda */
+}
+
+.carousel-control-next {
+    right: -60px; /* aproxima da borda direita */
+}
+
 
 /* ------------------------------------ página FALE CONOSCO ------------------------------------ */
 .texto-icon { /* icones do fale conosco */
